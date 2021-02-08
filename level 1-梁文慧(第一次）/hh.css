@@ -1,0 +1,82 @@
+div{
+    position:relative;
+    text-align: center;
+    top: 100px;
+    color:rgb(95, 107, 119);
+}
+#d1 ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: absolute;
+    left: 27%;
+    top: -15px;
+}
+#d1 li{
+    float: left;
+    margin-left: 18px;
+    text-align: center;
+}
+#d1 li:first-child{
+    color:darkturquoise;
+}
+#d2 input{
+    width:541px;
+    height:30px;
+    margin-top: 5px;
+    font-size: 20px;
+    border-width: 1px;
+    margin-bottom: 10px;
+}
+#d3 ul
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: absolute;
+    left: 28.3%;
+    top: -15px;
+}
+#d3 li{
+    font-size: small;
+    float: left;
+    margin-right: 185px;
+    text-align: center;
+}
+#d3 span{
+    color:dimgray;
+}
+#d3 li:last-child{
+    color: lightskyblue;
+}
+#d3 input{
+    padding: 10;
+    background-color: royalblue;
+}
+#d4 input{
+    width:243px;
+    height:30px;
+    margin-top: 20px;
+    font-size: 20px;
+    border-width: 1px;
+}
+#d4 input:first-child{
+    background-color: rgb(113, 139, 216);
+    color: white;
+    margin-right: 50px;
+    margin-bottom: 10px;
+}
+#d5 ul
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: absolute;
+    left: 28.5%;
+    top: -1px;
+}
+#d5 li{
+    float: left;
+    margin-right: 185px;
+    text-align: center;
+}

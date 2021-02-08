@@ -1,0 +1,162 @@
+body{
+    margin: 0 auto;
+    width: 1200px;
+    background-color: rgb(151, 153, 155);
+}
+#nav{
+   padding: 0;
+   margin: 0;
+   height: 50px;
+   background-color:black;
+   font-size: 14px;
+}
+#nav ul{
+    list-style: none;
+}
+#nav li{
+    float: left;
+}
+#nav a{
+    text-decoration: none;
+    color:white;
+}
+#nav li:first-child{
+    display: inline-block;
+    margin: 0 740px 0 0;
+}
+#nav li:nth-child(2)
+{
+    display: inline-block;
+    margin: 12px;
+}
+#nav li:nth-child(3)
+{
+    display: inline-block;
+    margin: 12px;
+}
+#nav li:nth-child(4)
+{
+    display: inline-block;
+    margin: 12px;
+}
+#nav li:last-child
+{
+    display: inline-block;
+    margin: 12px;
+}
+#main{
+    width: 1200px;
+    margin-top: 5px;
+}
+#cotent{
+    float: left;
+    width: 795px;
+}
+#celan{
+    margin-top: 18px;
+    background-color:white;
+    float: right;
+    width: 395px;
+    font-size: 14px;
+}
+#foot{
+    clear: both;
+}
+#article
+{
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+.article1{
+    background-color:white;
+}
+.article1 p{
+    line-height: 1.5em;
+    margin:  0;
+}
+.article1 img{
+   width: 300px;
+   height: 250px;
+}
+.article1 ul{
+    padding: 0;
+    margin: 20px;
+    list-style: none;
+}
+.article-3 img{
+    width: 125px;
+    height: 70px;
+}
+.article-3 p{
+    margin: 5px;
+}
+.article3{
+    background-color:white;
+    height: 320px;
+}
+.article-3{
+    display: grid;
+    grid-template-rows: repeat(2,100px);
+    grid-template-columns: repeat(5,135px) ;
+    grid-gap: 15px 8px;
+}
+.article3 div{
+    width: 135px;
+    height: 100px;
+    text-align: center;
+    border: 1px solid ;
+}
+.article4{
+    margin-bottom: 15px;
+    background-color:white;
+}
+.article4 table{
+   text-align: center;
+   height: 100px;
+   border-collapse: collapse;
+}
+.article4 table,td,th{
+    border: 1px solid;
+}
+.article4 td:first-child{
+   width: 300px;
+}
+.article4 td:nth-child(2){
+    width: 300px;
+}
+.article4 td:last-child{
+    width: 50px;
+}
+#foot{
+   padding: 0;
+   margin:  0;
+   height: 30px;
+   background-color:black;
+   color:white;
+   font-size: 14px;
+}
+#foot p{
+   text-align: center;
+}
+.p1{
+    text-indent: 7em;
+    color: lightsteelblue;
+    margin-bottom: 10px;
+}
+#p2{
+    text-indent: 2em;
+}
+.p3{
+    text-indent: 5em;
+}
+.p4 input{
+    height: 30px;
+    width: 350px;
+    color:white;
+    background-color:rgb(45, 45, 192);
+    margin-left: 10px;
+}
+
+
+
