@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>level_3的拷贝方法</title>
+    <script>
+        //拷贝
+        function Animal() {
+            this.species = "动物";
+        }
+        function Cat(name, color) {
+            var animal = new Animal();
+            for (var p in animal) {
+                Cat.prototype[p] = animal[p];
+            }
+            this.color = color;
+        }
+        var cat1 = new Cat("大毛", "黄色");
+        console.log(cat1.species); // 动物
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

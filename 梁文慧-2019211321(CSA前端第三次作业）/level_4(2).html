@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>level_4的其他方法</title>
+    <script>
+        var data = {
+            age: 18,
+            name: "liuruchao",
+            education: ["小学", "初中", "高中", "大学", undefined, null],
+            likesFood: new Set(["fish", "banana"]),
+            friends: [
+                { name: "summer", sex: "woman" },
+                { name: "daWen", sex: "woman" },
+                { name: "yang", sex: "man" }],
+            work: {
+                time: "2019",
+                project: { name: "test", obtain: ["css", "html", "js"] }
+            },
+            play: function () { console.log("玩滑板"); }
+        }
+        function copy(obj) {//深拷贝函数
+            var newobj = {};
+            if (typeof obj !== 'object') {
+                return obj;
+            }
+            for (var i in obj) {
+                var p = obj[i];//记录原对象的各个属性
+                if (p === obj) {
+                    continue;
+                }
+                if (typeof p === 'object') {
+                    newobj[i] = (p.constructor === Array) ? [] : Object.create(p);
+                }
+                else {
+                    newobj[i] = p;
+                }
+            }
+            return newobj
+        }
+        var obj2 = copy(data);//拷贝后的对象
+        console.log('obj1:', data);//打印原对象
+        console.log('obj2:', obj2);//打印拷贝后的对象
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>level_4的递归方法</title>
+    <script>
+        var data = {
+            age: 18,
+            name: "liuruchao",
+            education: ["小学", "初中", "高中", "大学", undefined, null],
+            likesFood: new Set(["fish", "banana"]),
+            friends: [
+                { name: "summer", sex: "woman" },
+                { name: "daWen", sex: "woman" },
+                { name: "yang", sex: "man" }],
+            work: {
+                time: "2019",
+                project: { name: "test", obtain: ["css", "html", "js"] }
+            },
+            play: function () { console.log("玩滑板"); }
+        }
+        function copy(obj) {
+            var newobj = {};
+            if (typeof obj !== 'object') {
+                return obj;
+            }
+            for (var i in obj) {
+                var p = obj[i];//保存原对象的属性
+                if (p === obj) {
+                    continue;
+                }
+                if(p instanceof Set)//将Set对象单独拷贝
+                {
+                    var likesFood = new Set();
+                    for(let j of p)
+                    {
+                        likesFood.add(j);
+                    }
+                    newobj[i]=likesFood;
+                }
+                else{
+                    newobj[i] = typeof obj[i] === 'object' ? copy(obj[i]) : obj[i];
+                }
+            }
+            return newobj
+        }
+        var obj2 = copy(data);
+        console.log('obj1:', data);//打印原对象
+        console.log('obj2:', obj2);//对象拷贝后的对象
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
