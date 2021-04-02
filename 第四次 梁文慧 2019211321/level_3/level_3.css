@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#container{
+    width: 900px;
+    margin: 20px auto;
+    text-align: center;
+}
+#top{
+    margin-left: 5px;
+}
+input{
+    width: 200px;
+    height: 30px;
+}
+button{
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    margin: 5px;
+    outline: none;
+    border: none;
+    background: antiquewhite ;
+}
+button:hover{
+    opacity: 0.6;
+}
+#bt2{
+    margin-right: 20px;
+}
+.bottomDiv{
+    flex: 1;
+    color:#FFF;
+    margin:0 1px;
+    font-size: 10px;
+    background: pink;
+}
+#bottom{
+    width: 98%;
+    height: 600px;
+    display: flex;
+    justify-content:center;
+    align-items: flex-end;/*在交叉轴上底部对齐*/
+    margin: 10px auto;
+    padding: 10px;
+    background: aquamarine;
+}
