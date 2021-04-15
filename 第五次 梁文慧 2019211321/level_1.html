@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let str = "I'm?���going�??�to�?�take�??�a?�trip�?�to��?daocheng�?�on��May Day."
+        //let r = /\"/
+        //let a = "'"
+        let j = /�+\?[a-z]/g //找出�？+字母
+        let st = str.match(j);
+        st = st.toString();
+        st=st.toUpperCase();//将匹配出来的字母变为大写
+        str = str.replace(j,st);//将符合条件的替换
+
+        let s=/\?�+|�\?+�|��\??/g
+        str = str.replace(s," ")//将其替换成空格
+        console.log(str) // 'I'm going to take a trip to Daocheng on May Day.'
+    </script>
+</body>
+
+</html>

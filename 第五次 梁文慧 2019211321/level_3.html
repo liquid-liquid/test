@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Student(name) {//通过分析可知sleepFirst应该同步执行，其他四个函数异步执行，
+            //进入任务队列，等待效果使用循环和data实现
+            function People(name) {
+                setTimeout(function () { console.log("Hi! This is " + name + "!"); }, 0);
+                return this;
+            }
+
+            People.prototype.sleep = function (time) {
+                setTimeout(function () {
+                    let timer = new Date();
+                    let Btime = timer.getSeconds();
+                    let Ntimer = timer.getSeconds();
+                    while (Ntimer - Btime < time) {
+                        let timer1 = new Date();
+                        Ntimer = timer1.getSeconds();
+                    }
+                    console.log("Wake up after " + time);
+                }, 0);
+
+
+                return this;
+            }
+
+            People.prototype.sleepFirst = function (time) {
+                let timer = new Date();
+                let Btime = timer.getSeconds();
+                let Ntimer = timer.getSeconds();
+                while (Ntimer - Btime < time) {
+                    let timer1 = new Date();
+                    Ntimer = timer1.getSeconds();
+                }
+                console.log("Wake up after " + time);
+                return this;
+                
+            }
+            People.prototype.study = function (course) {
+                setTimeout(function () {
+                    console.log("Study " + course + '~');
+                }, 0);
+                return this;
+                
+            }
+
+            return new People(name);
+        }
+
+        //Student('fxy');
+        // Student('fxy').sleep(3).study('javascript');
+        //Student('fxy').study('javascript').study('Vue');
+        //Student('fxy').sleepFirst(5).study('Ajax');
+    </script>
+</body>
+
+</html>
