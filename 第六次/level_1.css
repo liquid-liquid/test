@@ -1,0 +1,21 @@
+#article img {
+    margin: auto;
+    width: 150px;
+    height: 150px;
+}
+
+#article p {
+    /*text-align: center;*/
+    margin: 5px;
+}
+
+
+
+#article {
+    margin: auto;
+    display: grid;
+    grid-template-rows: repeat(2, 160px);
+    grid-template-columns: repeat(5, 160px);
+    grid-gap: 60px 10px;
+}
+

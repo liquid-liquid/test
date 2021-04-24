@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="level_1.css">
+</head>
+<body>
+    <div id="article">
+        <div>
+            <img src="ren.png">
+            <p>好看的图片</p>
+        </div>
+        <div>
+            <img src="ren.png">
+            <p>好看的图片</p>
+        </div>
+        <div>
+            <img src="ren.png">
+            <p>好看的图片</p>
+        </div>
+        <div>
+            <img src="ren.png">
+            <p>好看的图片</p>
+        </div>
+        <div>
+            
+            <img src="ren.png"><p>好看的图片</p>
+        </div>
+        <div>
+            <img src="ren.png">
+            <p>好看的图片</p>
+        </div>
+        <div>
+            <img src="ren.png">
+            <p>好看的图片</p>
+        </div>
+        <div>
+            <img src="ren.png">
+            <p>好看的图片</p>
+        </div>
+        <div>
+            <img src="ren.png">
+            <p>好看的图片</p>
+        </div>
+        <div>
+            <img src="ren.png">
+            <p>好看的图片</p>
+        </div>
+    </div>
+    <script>
+        function Ajax(url,method,dataType,hans) {
+            this.url =url;
+            this.method =method;
+            this.dataType =dataType;
+            const xhr = new XMLHttpRequest();
+            xhr.open(method, url, true);
+            xhr.onreadystatechange = () => {
+                if (xhr.readyState === 4) {
+                    if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
+                        const res = JSON.parse(xhr.responseText)
+                        hans(res);
+                    }
+                    else {
+                        console.log("请求失败")
+                    }
+                }
+            }
+            xhr.send()
+            
+        }
+        
+        var ajax = new Ajax('http://musicapi.leanapp.cn/personalized?limit=10','GET',JSON,hans);
+        function hans(data) {
+            let img = document.querySelectorAll('img');
+            let p = document.querySelectorAll('p');
+            for (let i = 0; i < img.length; i++) {
+                img[i].src = data.result[i].picUrl;
+                p[i].innerHTML = data.result[i].name;
+            }
+        }
+        
+    </script>
+</body>
+</html>
