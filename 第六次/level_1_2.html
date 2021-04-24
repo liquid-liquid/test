@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #id{
+            position: absolute;
+            top: 50px;
+        }
+        #id ul{
+            margin-left: 30px;
+            padding: 0;
+            list-style: none;
+        }
+        
+        #id li {
+            float: left;
+            margin-right: 60px;
+            text-align: center;
+        }
+        #id2 {
+            position: absolute;
+            top: 80px;
+        }
+        #id2 ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            
+        }
+        #id2 ul li{
+            float: left;
+            margin-right: 60px;
+            text-align: center;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <input type="text">
+    <button>提交</button>
+    <div>
+        <div id="id">
+            <ul>
+                <li>音乐标题</li>
+                <li>歌手</li>
+                <li>专辑</li>
+            </ul>
+        </div>
+        <div id ="id2">
+            <ol>
+            </ol>
+        </div>
+
+    </div>
+    <script>
+        var input = document.querySelector('input');
+        let btn = document.querySelector('button');
+        btn.onclick = function () {
+            const xhr = new XMLHttpRequest();
+            xhr.open("get", 'http://musicapi.leanapp.cn/search?keywords=' + input.value, true);
+            xhr.onreadystatechange = () => {
+                if (xhr.readyState === 4) {
+                    if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
+                        const res = JSON.parse(xhr.responseText)
+                        console.log(res);
+                        var ol = document.querySelector('ol')
+                        for (let i = 0; i < 30; i++) {
+                            var li_1 = document.createElement('li');
+                            var li_2 = document.createElement('li');
+                            var li_3 = document.createElement('li');
+                            var li = document.createElement('li');
+                            ul = document.createElement('ul')
+                            var a = document.createTextNode(res.result.songs[i].name);
+                            var b = document.createTextNode(res.result.songs[i].artists[0].name);
+                            var c = document.createTextNode(res.result.songs[i].album.artist.name);
+                            li_1.appendChild(a);
+                            li_2.appendChild(b);
+                            li_3.appendChild(c);
+                            ul.appendChild(li_1);
+                            ul.appendChild(li_2);
+                            ul.appendChild(li_3);
+                            li.appendChild(ul);
+                            ol.appendChild(li);
+
+
+                        }
+                    }
+                    else {
+                        console.log("请求失败")
+                    }
+                }
+            }
+            xhr.send()
+        }
+
+    </script>
+</body>
+
+</html>
